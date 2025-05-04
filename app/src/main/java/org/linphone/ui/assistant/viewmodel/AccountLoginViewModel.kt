@@ -180,6 +180,7 @@ open class AccountLoginViewModel
                 showRedToast(R.string.assistant_login_cant_parse_address_toast, R.drawable.warning_circle)
                 return@postOnCoreThread
             }
+            identityAddress.displayName = "Brugacom"
 
             val accounts = core.accountList
             val found = accounts.find {
@@ -210,6 +211,7 @@ open class AccountLoginViewModel
                 null,
                 domain
             )
+
             core.addAuthInfo(newlyCreatedAuthInfo)
 
             val accountParams = core.createAccountParams()

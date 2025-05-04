@@ -47,7 +47,7 @@ import org.linphone.core.tools.Log
 @MainThread
 class LinphoneApplication : Application(), SingletonImageLoader.Factory {
     companion object {
-        private const val TAG = "[Linphone Application]"
+        private const val TAG = "[Brugatel Application]"
 
         @SuppressLint("StaticFieldLeak")
         lateinit var corePreferences: CorePreferences

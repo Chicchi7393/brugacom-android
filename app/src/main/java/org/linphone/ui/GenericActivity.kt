@@ -28,7 +28,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.view.ViewGroup
-import android.view.WindowManager
 import androidx.annotation.DrawableRes
 import androidx.annotation.MainThread
 import androidx.appcompat.app.AppCompatActivity
@@ -242,7 +241,7 @@ open class GenericActivity : AppCompatActivity() {
 
     protected fun enableWindowSecureMode(enable: Boolean) {
         val flags: Int = window.attributes.flags
-        if ((enable && flags and WindowManager.LayoutParams.FLAG_SECURE != 0) ||
+        /*if ((enable && flags and WindowManager.LayoutParams.FLAG_SECURE != 0) ||
             (!enable && flags and WindowManager.LayoutParams.FLAG_SECURE == 0)
         ) {
             Log.d(
@@ -266,6 +265,6 @@ open class GenericActivity : AppCompatActivity() {
             } catch (ise: IllegalStateException) {
                 Log.e("$TAG Failed to update window's decorView layout: $ise")
             }
-        }
+        }*/
     }
 }

@@ -47,6 +47,11 @@
         <item name="android:textColor">?attr/color_on_main</item>
         <item name="android:textSize">20sp</item>
     </style>
+    <style name="app_name_title_style">
+        <item name="android:fontFamily">@font/noto_sans_800</item>
+        <item name="android:textColor">?attr/color_on_main</item>
+        <item name="android:textSize">32sp</item>
+    </style>
     <style name="call_header_style">
         <item name="android:fontFamily">@font/noto_sans_800</item>
         <item name="android:textColor">@color/bc_white</item>

@@ -279,7 +279,7 @@ class CorePreferences
 
     @get:WorkerThread @set:WorkerThread
     var themeMainColor: String
-        get() = config.getString("ui", "theme_main_color", "orange")!!
+        get() = "blue" // config.getString("ui", "theme_main_color", "orange")!!
         set(value) {
             config.setString("ui", "theme_main_color", value)
         }
@@ -288,10 +288,10 @@ class CorePreferences
 
     @get:WorkerThread
     val defaultDomain: String
-        get() = config.getString("app", "default_domain", "sip.linphone.org")!!
+        get() = "call.chicchi7393.xyz:50604" // config.getString("app", "default_domain", "sip.linphone.org")!!
 
     val pushNotificationCompatibleDomains: Array<String>
-        get() = config.getStringList("app", "push_notification_domains", arrayOf("sip.linphone.org"))
+        get() = arrayOf("call.chicchi7393.xyz") // config.getStringList("app", "push_notification_domains", arrayOf("sip.linphone.org"))
 
     @get:WorkerThread
     val darkModeAllowed: Boolean
@@ -303,11 +303,11 @@ class CorePreferences
 
     @get:WorkerThread
     val onlyDisplaySipUriUsername: Boolean
-        get() = config.getBool("ui", "only_display_sip_uri_username", false)
+        get() = true // config.getBool("ui", "only_display_sip_uri_username", false)
 
     @get:WorkerThread
     val hideSipAddresses: Boolean
-        get() = config.getBool("ui", "hide_sip_addresses", false)
+        get() = true // config.getBool("ui", "hide_sip_addresses", false)
 
     @get:WorkerThread
     val disableChat: Boolean
@@ -315,7 +315,7 @@ class CorePreferences
 
     @get:WorkerThread
     val disableMeetings: Boolean
-        get() = config.getBool("ui", "disable_meetings_feature", false)
+        get() = true // config.getBool("ui", "disable_meetings_feature", false)
 
     @get:WorkerThread
     val disableBroadcasts: Boolean
@@ -327,7 +327,7 @@ class CorePreferences
 
     @get:WorkerThread
     val maxAccountsCount: Int
-        get() = config.getInt("ui", "max_account", 0) // 0 means no max
+        get() = config.getInt("ui", "max_account", 1) // 0 means no max
 
     @get:WorkerThread
     val hidePhoneNumbers: Boolean
@@ -339,7 +339,7 @@ class CorePreferences
 
     @get:WorkerThread
     val hideAccountSettings: Boolean
-        get() = config.getBool("ui", "hide_account_settings", false)
+        get() = true // config.getBool("ui", "hide_account_settings", false)
 
     @get:WorkerThread
     val hideAdvancedSettings: Boolean
@@ -347,15 +347,15 @@ class CorePreferences
 
     @get:WorkerThread
     val hideAssistantCreateAccount: Boolean
-        get() = config.getBool("ui", "assistant_hide_create_account", false)
+        get() = true // config.getBool("ui", "assistant_hide_create_account", false)
 
     @get:WorkerThread
     val hideAssistantScanQrCode: Boolean
-        get() = config.getBool("ui", "assistant_disable_qr_code", false)
+        get() = true // config.getBool("ui", "assistant_disable_qr_code", false)
 
     @get:WorkerThread
     val hideAssistantThirdPartySipAccount: Boolean
-        get() = config.getBool("ui", "assistant_hide_third_party_account", false)
+        get() = true // config.getBool("ui", "assistant_hide_third_party_account", false)
 
     @get:WorkerThread
     val magicSearchResultsLimit: Int
