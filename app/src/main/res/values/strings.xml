@@ -398,7 +398,7 @@
     <!-- Call history -->
     <string name="history_title">Call history</string>
     <string name="history_call_start_title">New call</string>
-    <string name="history_call_start_search_bar_filter_hint">Search contact or history call</string>
+    <string name="history_call_start_search_bar_filter_hint">Type a number</string>
     <string name="history_call_start_create_group_call">Create a group call</string>
     <string name="history_call_start_no_suggestion_nor_contact">No suggestion and no contact for the moment…</string>
     <string name="history_group_call_start_dialog_set_subject">Set group call subject</string>

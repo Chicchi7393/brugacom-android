@@ -272,9 +272,9 @@ class CorePreferences
 
     @get:WorkerThread @set:WorkerThread
     var automaticallyShowDialpad: Boolean
-        get() = config.getBool("ui", "automatically_show_dialpad", false)
+        get() = true // config.getBool("ui", "automatically_show_dialpad", false)
         set(value) {
-            config.setBool("ui", "automatically_show_dialpad", value)
+            config.setBool("ui", "automatically_show_dialpad", true)
         }
 
     @get:WorkerThread @set:WorkerThread

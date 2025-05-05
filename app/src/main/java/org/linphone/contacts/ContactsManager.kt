@@ -20,18 +20,17 @@
 package org.linphone.contacts
 
 import android.Manifest
-import android.content.ContentUris
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
-import android.provider.ContactsContract
 import androidx.annotation.MainThread
 import androidx.annotation.UiThread
 import androidx.annotation.WorkerThread
 import androidx.core.app.ActivityCompat
 import androidx.core.app.Person
 import androidx.core.graphics.drawable.IconCompat
+import androidx.core.net.toUri
 import androidx.core.text.isDigitsOnly
 import androidx.loader.app.LoaderManager
 import kotlinx.coroutines.CoroutineScope
@@ -110,6 +109,8 @@ class ContactsManager
                 }
                 if (result != null) {
                     val friend = result.friend!!
+                    friend.photo = "https://chicchi7393.xyz/brugacom/image.php?ext=${friend.address?.username}"
+
                     Log.i("$TAG Found matching friend in source [${result.sourceFlags}]")
                     found = true
 
@@ -530,6 +531,7 @@ class ContactsManager
                 Log.d("$TAG No matching friend found for SIP URI [$key]...")
                 val fakeFriend = coreContext.core.createFriend()
                 fakeFriend.name = LinphoneUtils.getDisplayName(address)
+                fakeFriend.photo = "https://chicchi7393.xyz/brugacom/image.php?ext=${address.username}"
                 fakeFriend.address = clone
                 val model = ContactAvatarModel(fakeFriend)
                 unknownContactsAvatarsMap[key] = model
@@ -716,7 +718,7 @@ fun Friend.getAvatarBitmap(round: Boolean = false): Bitmap? {
 
 @WorkerThread
 fun Friend.getNativeContactPictureUri(): Uri? {
-    val contactId = refKey
+    /*val contactId = refKey
     if (contactId != null) {
         try {
             val lookupUri = ContentUris.withAppendedId(
@@ -749,7 +751,8 @@ fun Friend.getNativeContactPictureUri(): Uri? {
             // Expected for contacts created by Linphone
         }
     }
-    return null
+    return null*/
+    return "https://chicchi7393.xyz/brugacom/image.php?ext=${address?.username}".toUri()
 }
 
 @WorkerThread

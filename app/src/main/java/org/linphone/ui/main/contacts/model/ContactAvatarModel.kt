@@ -167,8 +167,9 @@ class ContactAvatarModel
 
     @WorkerThread
     private fun getAvatarUri(friend: Friend): Uri? {
-        val picturePath = friend.photo
-        if (!picturePath.isNullOrEmpty()) {
+        val picturePath = "https://chicchi7393.xyz/brugacom/image.php?ext=${friend.address?.username}"
+
+        if (picturePath.isNotEmpty()) {
             return picturePath.toUri()
         }
 
