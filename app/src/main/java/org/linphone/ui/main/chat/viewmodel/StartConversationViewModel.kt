@@ -254,7 +254,7 @@ class StartConversationViewModel
     fun updateGroupChatButtonVisibility() {
         coreContext.postOnCoreThread { core ->
             val hideGroupChat = !LinphoneUtils.isGroupChatAvailable(core)
-            hideGroupChatButton.postValue(hideGroupChat)
+            hideGroupChatButton.postValue(true)
         }
     }
 }

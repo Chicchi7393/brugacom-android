@@ -29,8 +29,8 @@
                 android:id="@+id/multiple_selection_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:constraint_referenced_ids="multiple_selection, multiple_selection_count"
-                android:visibility="@{viewModel.multipleSelectionMode ? View.VISIBLE : View.GONE, default=gone}" />
+                android:visibility="@{viewModel.multipleSelectionMode ? View.VISIBLE : View.GONE, default=gone}"
+                app:constraint_referenced_ids="multiple_selection, multiple_selection_count" />
 
             <ImageView
                 android:id="@+id/back"
@@ -140,75 +140,28 @@
                 app:layout_constraintTop_toTopOf="@id/search_bar"
                 app:tint="?attr/color_main2_600" />
 
-            <androidx.constraintlayout.widget.Group
-                android:id="@+id/group_chat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:constraint_referenced_ids="group_chat_icon, gradient_background, group_chat_label"
-                android:visibility="@{viewModel.hideGroupChatButton || viewModel.multipleSelectionMode || viewModel.searchFilter.length() > 0 ? View.GONE : View.VISIBLE}" />
-
             <!-- margin start must be half the size of the group_call_icon below -->
             <View
                 android:id="@+id/gradient_background"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="22dp"
                 android:background="@drawable/shape_gradient"
-                app:layout_constraintBottom_toBottomOf="@id/group_chat_icon"
-                app:layout_constraintEnd_toEndOf="@id/group_chat_label"
-                app:layout_constraintStart_toStartOf="@id/group_chat_icon"
-                app:layout_constraintTop_toTopOf="@id/group_chat_icon" />
-
-            <ImageView
-                android:id="@+id/group_chat_icon"
-                android:onClick="@{() -> viewModel.switchToMultipleSelectionMode()}"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="28dp"
-                android:background="@drawable/shape_orange_round"
-                android:padding="10dp"
-                android:src="@drawable/users_three"
-                android:contentDescription="@null"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/search_bar"
-                app:tint="?attr/color_on_main" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/default_text_style_800"
-                android:id="@+id/group_chat_label"
-                android:onClick="@{() -> viewModel.switchToMultipleSelectionMode()}"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:drawableEnd="@drawable/caret_right"
-                android:padding="5dp"
-                android:text="@string/new_conversation_create_group"
-                android:textColor="?attr/color_main2_900"
-                android:textSize="16sp"
-                android:maxLines="1"
-                android:ellipsize="end"
-                app:layout_constraintBottom_toBottomOf="@id/group_chat_icon"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/group_chat_icon"
-                app:layout_constraintTop_toTopOf="@id/group_chat_icon" />
+                bind:layout_editor_absoluteX="38dp"
+                bind:layout_editor_absoluteY="147dp" />
 
             <ImageView
                 android:id="@+id/no_contact_image"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_margin="10dp"
-                android:src="@drawable/illu"
                 android:contentDescription="@null"
+                android:src="@drawable/illu"
                 android:visibility="@{viewModel.isEmpty ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toTopOf="@id/create_group"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_max="200dp"
-                app:layout_constraintVertical_bias="0.3"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/group_chat_icon"
-                app:layout_constraintBottom_toTopOf="@id/create_group" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 style="@style/section_header_style"
@@ -226,12 +179,10 @@
                 android:id="@+id/contacts_list"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginTop="8dp"
                 android:visibility="@{viewModel.isEmpty ? View.GONE : View.VISIBLE}"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/group_chat_icon"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <com.google.android.material.progressindicator.CircularProgressIndicator
                 android:id="@+id/fetch_in_progress"
@@ -240,10 +191,9 @@
                 android:indeterminate="true"
                 android:visibility="@{viewModel.searchInProgress ? View.VISIBLE : View.GONE}"
                 app:indicatorColor="?attr/color_main1_500"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/group_chat_icon"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/create_group"
