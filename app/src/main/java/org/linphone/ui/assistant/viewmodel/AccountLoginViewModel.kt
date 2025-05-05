@@ -180,7 +180,6 @@ open class AccountLoginViewModel
                 showRedToast(R.string.assistant_login_cant_parse_address_toast, R.drawable.warning_circle)
                 return@postOnCoreThread
             }
-            identityAddress.displayName = "Brugacom"
 
             val accounts = core.accountList
             val found = accounts.find {
@@ -202,7 +201,6 @@ open class AccountLoginViewModel
             }
 
             val domain = identityAddress.domain
-
             newlyCreatedAuthInfo = Factory.instance().createAuthInfo(
                 user,
                 null,
@@ -216,6 +214,9 @@ open class AccountLoginViewModel
 
             val accountParams = core.createAccountParams()
             accountParams.identityAddress = identityAddress
+            accountParams.internationalPrefix = ""
+            // PICTURE URI
+            accountParams.pictureUri = "https://chicchi7393.xyz/brugacom/image.php?ext=$user"
 
             val prefix = internationalPrefix.value.orEmpty().trim()
             val isoCountryCode = internationalPrefixIsoCountryCode.value.orEmpty()
