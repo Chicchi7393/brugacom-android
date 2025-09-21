@@ -59,7 +59,6 @@ import org.linphone.ui.main.MainActivity
 import org.linphone.ui.main.contacts.model.ContactAvatarModel
 import org.linphone.ui.main.contacts.model.ContactNumberOrAddressClickListener
 import org.linphone.ui.main.contacts.model.ContactNumberOrAddressModel
-import org.linphone.ui.main.model.isEndToEndEncryptionMandatory
 import org.linphone.utils.AppUtils
 import org.linphone.utils.ImageUtils
 import org.linphone.utils.LinphoneUtils
@@ -846,7 +845,7 @@ fun Friend.getListOfSipAddressesAndPhoneNumbers(listener: ContactNumberOrAddress
 
         // phone numbers are disabled is secure mode unless linked to a SIP address
         val defaultAccount = LinphoneUtils.getDefaultAccount()
-        val enablePhoneNumbers = hasPresenceInfo || !isEndToEndEncryptionMandatory()
+        val enablePhoneNumbers = hasPresenceInfo
         val address = presenceAddress ?: core.interpretUrl(
             number.phoneNumber,
             LinphoneUtils.applyInternationalPrefix(defaultAccount)

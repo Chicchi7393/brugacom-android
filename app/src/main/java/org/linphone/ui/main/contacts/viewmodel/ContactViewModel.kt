@@ -513,7 +513,7 @@ class ContactViewModel
                 )
                 chatParams.backend = ChatRoom.Backend.FlexisipChat
                 params.securityLevel = Conference.SecurityLevel.EndToEnd
-            } else if (!account.params.instantMessagingEncryptionMandatory) {
+            } else if (true) {
                 if (LinphoneUtils.isEndToEndEncryptedChatAvailable(core)) {
                     Log.i(
                         "$TAG Account is in interop mode but LIME is available, creating an E2E encrypted conversation"

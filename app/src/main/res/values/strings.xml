@@ -114,10 +114,10 @@
     <string name="welcome_page_title">Welcome</string>
     <string name="welcome_page_subtitle">in &appName;</string>
     <string name="welcome_page_1_message">A <b>secured</b>, <b>open source</b> and <b>Chiavennasca</b> communication app.</string>
-    <string name="welcome_page_2_title">Secured</string>
-    <string name="welcome_page_2_message">Your communications are safe thanks to our <b>end-to-end encryption</b>.</string>
-    <string name="welcome_page_3_title">Open source</string>
-    <string name="welcome_page_3_message">A <b>free</b> and open source application since <b>2025</b>.</string>
+    <string name="welcome_page_2_title">Secured by AdryScanner</string>
+    <string name="welcome_page_2_message">Your communications are safe thanks to our <b>"""""end-to-end""""" encryption</b>.</string>
+    <string name="welcome_page_3_title">Closed source</string>
+    <string name="welcome_page_3_message">A <b>free</b> and closed source application since <b>2025</b>. Pay 150BTB To Ferdinando for source</string>
 
     <!-- Generic toasts -->
     <string name="sip_address_copied_to_clipboard_toast">SIP address copied into clipboard</string>

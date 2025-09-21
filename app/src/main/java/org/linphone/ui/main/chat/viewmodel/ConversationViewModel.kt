@@ -543,12 +543,7 @@ class ConversationViewModel
     fun checkIfConversationShouldBeDisabledForSecurityReasons() {
         if (!isChatRoomInitialized()) return
         if (!chatRoom.hasCapability(ChatRoom.Capabilities.Encrypted.toInt())) {
-            if (LinphoneUtils.getAccountForAddress(chatRoom.localAddress)?.params?.instantMessagingEncryptionMandatory == true) {
-                Log.w(
-                    "$TAG Conversation with subject [${chatRoom.subject}] is considered as read-only because it isn't encrypted and default account is in secure mode"
-                )
-                isDisabledBecauseNotSecured.postValue(true)
-            } else {
+            if (true) {
                 isDisabledBecauseNotSecured.postValue(false)
             }
         } else {

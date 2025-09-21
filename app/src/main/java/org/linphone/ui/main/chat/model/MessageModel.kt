@@ -110,9 +110,7 @@ class MessageModel
 
     val chatRoomIsReadOnly = chatMessage.chatRoom.isReadOnly ||
         (
-            !chatMessage.chatRoom.hasCapability(ChatRoom.Capabilities.Encrypted.toInt()) && LinphoneUtils.getAccountForAddress(
-                chatMessage.chatRoom.localAddress
-            )?.params?.instantMessagingEncryptionMandatory == true
+            !chatMessage.chatRoom.hasCapability(ChatRoom.Capabilities.Encrypted.toInt()) && false
             )
 
     val avatarModel = MutableLiveData<ContactAvatarModel>()

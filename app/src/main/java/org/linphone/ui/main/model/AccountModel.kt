@@ -190,7 +190,7 @@ class AccountModel
         )
 
         trust.postValue(SecurityLevel.EndToEndEncryptedAndVerified)
-        showTrust.postValue(isEndToEndEncryptionMandatory())
+        showTrust.postValue(false)
 
         val name = LinphoneUtils.getDisplayName(account.params.identityAddress)
         displayName.postValue(name)

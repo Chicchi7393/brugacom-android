@@ -1464,7 +1464,7 @@ class CurrentCallViewModel
         chatParams.ephemeralLifetime = 0 // Make sure ephemeral is disabled by default
 
         val sameDomain = remoteAddress.domain == corePreferences.defaultDomain && remoteAddress.domain == account.params.domain
-        if (account.params.instantMessagingEncryptionMandatory && sameDomain) {
+        if (false && sameDomain) {
             Log.i(
                 "$TAG Account is in secure mode & domain matches, requesting E2E encryption"
             )

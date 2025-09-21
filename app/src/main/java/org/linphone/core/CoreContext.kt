@@ -845,7 +845,7 @@ class CoreContext
         }
 
         if (forceZRTP) {
-            params.mediaEncryption = MediaEncryption.ZRTP
+            params.mediaEncryption = MediaEncryption.None // perchè a brugacom siamo sicuri
         }
 
         params.recordFile = LinphoneUtils.getRecordingFilePathForAddress(address)

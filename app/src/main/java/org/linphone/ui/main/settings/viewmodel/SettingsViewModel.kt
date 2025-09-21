@@ -811,16 +811,15 @@ class SettingsViewModel
             }
         }
 
-        mediaEncryptionMandatory.postValue(core.isMediaEncryptionMandatory)
+        mediaEncryptionMandatory.postValue(false)
     }
 
     @UiThread
     fun setMediaEncryption(index: Int) {
         coreContext.postOnCoreThread { core ->
-            val mediaEncryption = mediaEncryptionValues[index]
-            core.mediaEncryption = mediaEncryption
+            core.mediaEncryption = MediaEncryption.None
 
-            if (mediaEncryption == MediaEncryption.None) {
+            if (true) {
                 core.isMediaEncryptionMandatory = false
                 mediaEncryptionMandatory.postValue(false)
             }
@@ -832,8 +831,8 @@ class SettingsViewModel
         val newValue = mediaEncryptionMandatory.value == false
 
         coreContext.postOnCoreThread { core ->
-            core.isMediaEncryptionMandatory = newValue
-            mediaEncryptionMandatory.postValue(newValue)
+            core.isMediaEncryptionMandatory = false
+            mediaEncryptionMandatory.postValue(false)
         }
     }
 

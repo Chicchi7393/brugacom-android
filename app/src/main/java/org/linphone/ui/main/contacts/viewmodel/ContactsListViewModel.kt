@@ -262,7 +262,7 @@ class ContactsListViewModel
         magicSearch.getContactsListAsync(
             filter,
             domain,
-            MagicSearch.Source.Friends.toInt() or MagicSearch.Source.LdapServers.toInt() or MagicSearch.Source.RemoteCardDAV.toInt(),
+            MagicSearch.Source.LdapServers.toInt() or MagicSearch.Source.RemoteCardDAV.toInt(),
             MagicSearch.Aggregation.Friend
         )
     }

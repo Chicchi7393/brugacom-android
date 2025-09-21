@@ -180,11 +180,11 @@ class ConversationForwardMessageViewModel
         chatParams.ephemeralLifetime = 0 // Make sure ephemeral is disabled by default
 
         val sameDomain = remote.domain == corePreferences.defaultDomain && remote.domain == account.params.domain
-        if (account.params.instantMessagingEncryptionMandatory && sameDomain) {
+        if (false && sameDomain) {
             Log.i("$TAG Account is in secure mode & domain matches, creating an E2E encrypted conversation")
             chatParams.backend = ChatRoom.Backend.FlexisipChat
             params.securityLevel = Conference.SecurityLevel.EndToEnd
-        } else if (!account.params.instantMessagingEncryptionMandatory) {
+        } else if (true) {
             if (LinphoneUtils.isEndToEndEncryptedChatAvailable(core)) {
                 Log.i(
                     "$TAG Account is in interop mode but LIME is available, creating an E2E encrypted conversation"
